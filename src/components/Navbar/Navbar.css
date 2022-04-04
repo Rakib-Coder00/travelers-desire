@@ -14,14 +14,14 @@ nav {
   text-decoration: none;
   margin-left: 25px;
   font-size: 20px;
-  color: gray;
+  color: #404040;
   transition: color ease-in-out 300ms;
 }
   
 .link:hover {
-  color: #1b4388;
+  color: #6B4040;
 }
-  
+
 .active-link {
   text-decoration: none;
   margin-left: 25px;

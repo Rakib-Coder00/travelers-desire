@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ReviewContext } from './../../App';
 
-const Reviews = ({review}) => {
-    const {name, photo, text, position}= review
+const Reviews = () => {
+    const [reviews] = useContext(ReviewContext)
+    
     return (
         <div>
-            <img src={photo} alt=""></img>
+            <h4>This is a comment</h4>
+        
+            <div className="">
+            {reviews.map((review) =>  (
+            <div key={review.id}>
+            <img src={review.photo} alt=""></img>
             <div className='product-info'>
-                <p className='product-name'>{name}</p>
-                <p><small>Ratings: {position}</small></p>
+                <p className='product-name'>{review.name}</p>
+                <p><small>Ratings: {review.position}</small></p>
+            </div>
+        </div>
+          ))}
             </div>
         </div>
     );

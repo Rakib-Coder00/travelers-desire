@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import img from "../../Assets/image/img-2.jpg";
 import useReviews from "./../../Hooks/useReviews";
-import Reviews from "../Reviews/Reviews";
+
 
 const Home = () => {
   const [reviews, setReviews] = useReviews();
@@ -30,8 +30,14 @@ const Home = () => {
         <h1>Customer Review({reviews.length})</h1>
 
         <div className="review-cart">
-          {reviews.map((review) => (
-            <Reviews key={review.id} review={review} />
+          {reviews.slice(0, 3).map((review) =>  (
+            <div key={review.id}>
+            <img src={review.photo} alt=""></img>
+            <div className='product-info'>
+                <p className='product-name'>{review.name}</p>
+                <p><small>Ratings: {review.position}</small></p>
+            </div>
+        </div>
           ))}
         </div>
 
