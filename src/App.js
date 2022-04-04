@@ -8,14 +8,12 @@ import Blogs from './components/Blogs/Blogs';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 import { createContext } from 'react';
-import useReviews from './Hooks/useReviews';
 
 export const ReviewContext = createContext()
 
 function App() {
-  const [reviews, setReviews]= useReviews()
   return (
-    <ReviewContext.Provider value={[reviews, setReviews]}>
+    <div>
         <Navbar/>
         <Routes>
           <Route path='/'  element={<Home/>}/>
@@ -25,7 +23,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='*' element={<NotFound/>}/> 
           </Routes>
-    </ReviewContext.Provider>
+    </div>
   )
 }
 

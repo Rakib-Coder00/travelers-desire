@@ -6,12 +6,11 @@ import useReviews from "./../../Hooks/useReviews";
 
 const Home = () => {
   const [reviews, setReviews] = useReviews();
-  // console.log(reviews);
   return (
     <div>
       <div className="home-container">
         <div className="txt-container">
-          <h1>Your next Tour</h1>
+          <h1>Travelers Desire</h1>
           <h1>Your Best Experience</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
