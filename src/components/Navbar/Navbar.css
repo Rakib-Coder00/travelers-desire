@@ -5,16 +5,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
-  padding: 0 40%;
+  padding: 0 35%;
   font-family: "Teko", sans-serif;
   text-transform: uppercase;
 }
 
 .link {
   text-decoration: none;
-  margin-left: 15px;
+  margin-left: 25px;
   font-size: 20px;
-  color: #0883D7;
+  color: gray;
   transition: color ease-in-out 300ms;
 }
   
@@ -24,7 +24,7 @@ nav {
   
 .active-link {
   text-decoration: none;
-  margin-left: 15px;
+  margin-left: 25px;
   font-size: 20px;
   transition: color ease-in-out 300ms;
   color: #C54A3F;

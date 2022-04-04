@@ -5,12 +5,12 @@ const useReviews = () => {
     const [reviews, setReviews] = useState([])
     console.log(reviews);
     useEffect(() => {
-      fetch('data.json')
+      fetch('review.json')
       .then(res => res.json())
       .then(data => setReviews(data))
     }, [])
     
-    return []
+    return [reviews, setReviews]
 };
 
 export default useReviews;
