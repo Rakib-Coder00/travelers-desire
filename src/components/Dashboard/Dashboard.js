@@ -1,4 +1,5 @@
 import React from 'react';
+import './Dashboard.css'
 import {LineChart, Line, Pie, PieChart, Tooltip, AreaChart, XAxis, YAxis, CartesianGrid, Area, BarChart, Legend, Bar } from 'recharts';
 import useData from './../../Hooks/useData';
 
@@ -6,7 +7,7 @@ const Dashboard = () => {
     const[data] = useData()
     console.log(data);
     return (
-        <div>
+        <div className='dashboard'>
             <div className="">
                 <h2>Month Wise Sell</h2>
                 <LineChart width={730} height={250} data={data}

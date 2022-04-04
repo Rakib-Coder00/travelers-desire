@@ -2,9 +2,10 @@ import React from "react";
 import "./Home.css";
 import img from "../../Assets/image/img-2.jpg";
 import useReviews from "./../../Hooks/useReviews";
-
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate()
   const [reviews, setReviews] = useReviews();
   return (
     <div>
@@ -31,17 +32,17 @@ const Home = () => {
         <div className="review-cart">
           {reviews.slice(0, 3).map((review) =>  (
             <div key={review.id}>
-            <img src={review.photo} alt=""></img>
+            <img src={review.avatar} alt=""></img>
             <div className='product-info'>
                 <p className='product-name'>{review.name}</p>
-                <p><small>Ratings: {review.position}</small></p>
+                <p><small>Ratings: {review.rating}</small></p>
             </div>
         </div>
           ))}
         </div>
 
       </div>
-      <button>See all reviews</button>
+      <button onClick={()=> navigate('/reviews')}>See all reviews</button>
     </div>
   );
 };
