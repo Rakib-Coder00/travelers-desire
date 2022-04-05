@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+
 const useData = () => {
     const [data, setData] = useState([])
     useEffect(() => {

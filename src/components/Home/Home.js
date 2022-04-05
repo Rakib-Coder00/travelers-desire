@@ -1,22 +1,22 @@
 import React from "react";
 import "./Home.css";
-import img from "../../Assets/image/img-2.jpg";
+import img from "../../Assets/image/img-1.jpg";
 import useReviews from "./../../Hooks/useReviews";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {  faQuoteLeft, faQuoteRight, faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const navigate = useNavigate()
-  const [reviews, setReviews] = useReviews();
+  const [reviews] = useReviews();
   return (
-    <div>
+    <div className="home">
       <div className="home-container">
         <div className="txt-container">
           <h1>Travelers Desire</h1>
-          <h1>Your Best Experience</h1>
+          <h1>Analyze Your Next Business Travel</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Necessitatibus dignissimos <br /> voluptas ea quo laboriosam ullam
-            rerum accusamus harum voluptates, aut commodi. <br /> Officia, fuga.
+          Certainly, travel is more than the seeing of sights. It is a change that goes on, <br /> deep and permanent, in the ideas of living.Travel makes one modest. <br /> You see what a tiny place you occupy in the world.
           </p>
           <button>Explore Now</button>
         </div>
@@ -31,18 +31,36 @@ const Home = () => {
 
         <div className="review-cart">
           {reviews.slice(0, 3).map((review) =>  (
-            <div key={review.id}>
-            <img src={review.avatar} alt=""></img>
-            <div className='product-info'>
-                <p className='product-name'>{review.name}</p>
-                <p><small>Ratings: {review.rating}</small></p>
+            <div key={review.id} className="review-content box">
+            <FontAwesomeIcon className="fa-left" icon={faQuoteLeft}/>
+            <FontAwesomeIcon className="fa-right" icon={faQuoteRight}/>
+            <img src={review.avatar} alt=""/>
+            
+            <div className="stars"> {review.rating === 5 ?
+             (<div>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            </div>): 
+            (<div>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStar}/>
+            <FontAwesomeIcon icon={faStarHalf}/>
+            </div>) 
+            }  <span>{review.rating}</span>
             </div>
-        </div>
+            <p>{review.message}</p>
+            <h3>{review.name}</h3>
+        </div> 
           ))}
         </div>
 
       </div>
-      <button onClick={()=> navigate('/reviews')}>See all reviews</button>
+      <button className='review-btn' onClick={()=> navigate('/reviews')}>See all reviews</button>
     </div>
   );
 };
